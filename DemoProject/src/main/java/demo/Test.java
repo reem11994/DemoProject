@@ -1,11 +1,16 @@
 package demo;
+import java.net.*;
+import java.io.*;
 
 import twitter4j.Status;
+//import demo.ReadingTextFile;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
 import java.util.List;
+
+
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.api.TweetsResources;
@@ -13,7 +18,47 @@ import twitter4j.conf.Configuration;
 import twitter4j.conf.ConfigurationBuilder;
 public class Test {
 	public static void main(String[] args) {
-    Twitter twitter = get_twitter_instance();
+	List<ProfileData> profileData;
+	ReadingTextFile read = new ReadingTextFile();
+	String s=read.readFile("f");	
+  // System.out.println(s);
+	profileData=read.getObjectFromJason(s);
+	String id = "";
+	for(int i=0;i<profileData.size();i++){
+		id = profileData.get(i).getLocation();
+	    System.out.println("\n dania "+id);
+	} 
+	
+	
+	 URL twitter = null;
+	try {
+		twitter = new URL("http://www.twitter.com/"+id);
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+     URLConnection yc;
+	try {
+		yc = twitter.openConnection();
+		  BufferedReader in = new BufferedReader(
+                  new InputStreamReader(
+                  yc.getInputStream()));
+		  
+String inputLine;
+
+		while ((inputLine = in.readLine()) != null) 
+		System.out.println("####\n"+inputLine);
+		
+		in.close();
+
+
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   
+	
+/*    Twitter twitter = get_twitter_instance();
     try {
      
         List<Status> statuses;
@@ -33,7 +78,7 @@ public class Test {
         te.printStackTrace();
         System.out.println("Failed to get timeline: " + te.getMessage());
         System.exit(-1);
-    }
+    }*/
 }
 
 
