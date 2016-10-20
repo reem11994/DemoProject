@@ -1,4 +1,4 @@
-package demo;
+package twitterFunctions;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import twitter4j.QueryResult;
 
 public class SearchForTweets {
 	public static void main(String[] args) {
+
 		GetAccessToken getInstance = new GetAccessToken();
 		Twitter twitter = getInstance.getTwitterInstance();
-
 		try {
 			Query query = new Query("عاجل#");
 			QueryResult result;
@@ -31,8 +31,6 @@ public class SearchForTweets {
 			System.exit(-1);
 		}
 
-	} 
-
 	}
 
-
+}

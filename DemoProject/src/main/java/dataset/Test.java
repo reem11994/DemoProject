@@ -1,10 +1,12 @@
-package demo;
+package dataset;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import twitterFunctions.ProfileData;
 
 
 public class Test {
@@ -22,12 +24,13 @@ public class Test {
 			String id = "";
 			count++;
 			for (int i = 0; i < profileData.size(); i++) {
-				id = profileData.get(i).getLocation();
+				id = profileData.get(i).getID();
 				System.out.println("Id No."+count+ "\t"+ id);
 			}
 
 			/*
-			 * StringBuilder result = new StringBuilder(); URL url; try { url =
+			 * StringBuilder result = new StringBuilder();
+			 *  URL url; try { url =
 			 * new URL("https://twitter.com//"+id); HttpURLConnection conn; try
 			 * { conn = (HttpURLConnection) url.openConnection();
 			 * System.out.println(conn); conn.setRequestMethod("GET");
