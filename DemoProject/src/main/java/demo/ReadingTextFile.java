@@ -13,29 +13,30 @@ import java.util.List;
 public class ReadingTextFile {
 
 
-public String readFile(String filename) 
-{
-    String content = null;
-    File file = new File("C:\\Users\\hamada1\\Desktop\\00\\00\\21796370\\profile.txt"); //for ex foo.txt
-    FileReader reader = null;
-    try {
-        reader = new FileReader(file);
-        char[] chars = new char[(int) file.length()];
-        reader.read(chars);
-        content = new String(chars);
-        reader.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-    } finally {
-        if(reader !=null){try {
+	public String readFile(File f) {
+		String content = null;
+		FileReader reader = null;
+		try {
+			reader = new FileReader(f);
+			char[] chars = new char[(int) f.length()];
+			reader.read(chars);
+			content = new String(chars);
 			reader.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}}
-    }
-    return content;
-}
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return content;
+	}
 public List<ProfileData> getObjectFromJason(String jason)
 {
 

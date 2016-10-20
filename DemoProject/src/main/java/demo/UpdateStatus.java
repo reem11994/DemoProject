@@ -9,7 +9,7 @@ public class UpdateStatus {
 	    try{
 	        	GetAccessToken getInst=new GetAccessToken();
 	  		   Twitter twitter = getInst.getTwitterInstance();
-    Status status = twitter.updateStatus("reem yara dania");
+    Status status = twitter.updateStatus("good morning");
     System.out.println("Successfully updated the status to [" + status.getText() + "].");
     System.exit(0);
 } catch (TwitterException te) {
