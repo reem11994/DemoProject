@@ -28,44 +28,28 @@ public class Test {
 				System.out.println("Id No."+count+ "\t"+ id);
 			}
 
-			/*
-			 * StringBuilder result = new StringBuilder();
-			 *  URL url; try { url =
-			 * new URL("https://twitter.com//"+id); HttpURLConnection conn; try
-			 * { conn = (HttpURLConnection) url.openConnection();
-			 * System.out.println(conn); conn.setRequestMethod("GET");
-			 * BufferedReader rd = new BufferedReader(new
-			 * InputStreamReader(conn.getInputStream())); String line;
-			 * PrintWriter writer = new
-			 * PrintWriter("C:\\Users\\hamada1\\Desktop\\the-file-name.txt",
-			 * "UTF-8");
-			 * 
-			 * while ((line = rd.readLine()) != null) { result.append(line);
-			 * result.append("\r"); //System.out.println("line"+line);
-			 * writer.println(line); writer.println("\r"); }
-			 * //System.out.println("line"+ result.toString()); rd.close();
-			 * 
-			 * writer.close();
-			 * 
-			 * } catch (IOException e1) { // TODO Auto-generated catch block
-			 * e1.printStackTrace(); }
-			 * 
-			 * 
-			 * 
-			 * 
-			 * } catch (MalformedURLException e) { // TODO Auto-generated catch
-			 * block e.printStackTrace(); }
-			 * 
-			 * String word = "Sorry, that page doesn’t exist"; String text =
-			 * result.toString(); Boolean found;
-			 * 
-			 * found = text.contains(word); System.out.println("kkkkk"+found);
-			 * 
-			 * 
-			 * 
-			 * }
-			 */
+			StringBuilder result = new StringBuilder();
+			URL yahoo = null;
+					try {
+						yahoo = new URL("http://www.google.com/");
+					} catch (MalformedURLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			        URLConnection yc;
+					try {
+					yc = yahoo.openConnection();
+					BufferedReader in = new BufferedReader(
+			        new InputStreamReader(yc.getInputStream()));
+			        String inputLine;
 
+			        while ((inputLine = in.readLine()) != null) 
+			        System.out.println(inputLine);
+			        in.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 		}
 	}}
 	
