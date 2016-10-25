@@ -21,12 +21,12 @@ public class TestDataset {
 		List<ProfileData> profileData;
 		ReadingTextFile read = new ReadingTextFile();
 		List<File> files;
-		File curDir = new File("C:\\Users\\Lenovo\\Desktop\\00\\00");
+		File curDir = new File("C:\\Users\\hamada1\\Desktop\\00\\00");
 		files = getAllFiles(curDir);
 		int count = 0;
 		PrintWriter writer = null;
 		try {
-			writer = new PrintWriter("C:\\Users\\Lenovo\\Desktop\\profiles.txt", "UTF-8");
+			writer = new PrintWriter("CC:\\Users\\hamada1\\Desktop\\profiles.txt","UTF-8");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
