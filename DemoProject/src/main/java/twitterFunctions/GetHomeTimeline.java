@@ -12,7 +12,7 @@ public class GetHomeTimeline {
 		try {
 			GetAccessToken getInstance = new GetAccessToken();
 			Twitter twitter = getInstance.getTwitterInstance();
-			User user = twitter.verifyCredentials();
+			User user = null ;//= twitter.verifyCredentials();
 			List<Status> statuses = twitter.getHomeTimeline();
 			System.out.println("Showing @" + user.getScreenName() + "'s home timeline.");
 			for (Status status : statuses) {

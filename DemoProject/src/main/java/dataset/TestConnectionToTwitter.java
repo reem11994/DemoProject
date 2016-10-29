@@ -13,7 +13,7 @@ public class TestConnectionToTwitter {
 	{
 //reem
 	boolean m2=  is_suspended("https://www.twitter.com/boom0535"); // true
-	m2=is_suspended("https://www.twitter.com/PSL_U");// true
+ m2=is_suspended("https://www.twitter.com/PSL_U");// true
 	m2=is_suspended("https://www.twitter.com/TEN_GOP");// false
 	}
 
@@ -74,6 +74,7 @@ public class TestConnectionToTwitter {
 
 	if(conn.getURL().getPath().contains("suspended"))
 	{
+	System.out.println("suspended");
 	return true;
 	}
 
@@ -84,9 +85,10 @@ public class TestConnectionToTwitter {
 	while ((inputLine = rd.readLine()) != null)
 	{
 
-	if(inputLine.contains("Sorry, that page doesn’t exist!"))
+	if(inputLine.contains("Sorry, that page doesn’t exist!")){
+		System.out.println("suspended");
 	return true;
-	}
+	}}
 	return false;
 
 

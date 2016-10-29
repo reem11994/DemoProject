@@ -7,8 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import twitterFunctions.ProfileData;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +50,8 @@ public class ReadingTextFile {
 				JSONObject jsonObject = new JSONObject(jason);
 				ProfileData profileData = new ProfileData();
 				profileData.setID(jsonObject.getString("id"));
+				
+				profileData.setScreenName(jsonObject.getString("screen_name"));
 				profilesData.add(profileData);
 			}
 		} catch (JSONException e) {
