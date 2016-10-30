@@ -56,35 +56,30 @@ public class TestDataset {
 
 					String s = read.readFile(f);
 					profileData = read.getObjectFromJason(s);
-					//statuses=
-					System.out.println("$$$$$$$$$$ "+s);
-					
+
 					String id = "";
-					String screenName="";
+					String screenName = "";
 
 					for (int j = 0; j < profileData.size(); j++) {
 						id = profileData.get(j).getID();
 						screenName = profileData.get(j).getScreenName();
 
 						System.out.println("Id No." + count + "\t" + id);
-						//System.out.println("ScreenName is "+screenName);
+						System.out.println("ScreenName is " + screenName);
 						count++;
-						//StringBuilder result = new StringBuilder();
-						//String line;
 
 						writer.println("Id No." + count + "\t" + id);
 						writer.println("\r");
-						
-						/*try {
-							boolean m2=  is_suspended("https://www.twitter.com/"+screenName);
-							//System.out.println("\n");
-							System.out.println("result "+m2);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} // true
-*/
-						//System.out.println("############################");
+
+						/*
+						 * try { boolean m2=
+						 * is_suspended("https://www.twitter.com/"+screenName);
+						 * //System.out.println("\n");
+						 * System.out.println("result "+m2); } catch
+						 * (InterruptedException e) { // TODO Auto-generated
+						 * catch block e.printStackTrace(); } // true
+						 */
+						// System.out.println("############################");
 					}
 				}
 
